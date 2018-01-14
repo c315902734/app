@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <script type="text/javascript" charset="UTF-8" src="../script/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+</head>
+<body >
+</body>
+</html>
+<script>
+apiready = function(){
+var winWidth = api.winWidth;
+var winHeight = api.winHeight;
+var roomId=api.pageParam.roomId;
+var obj = api.require('playModule');
+obj.play({
+    rect:
+    {    x: 0,
+        y : 0,
+        w : winWidth,
+        h: 240
+    },
+    fixedOn: 'player',
+    title: '风之伤直播系统',
+    // url: 'http://218.241.17.26/live/'+roomId+'.m3u8 ',
+    url: 'rtmp://218.241.17.26/live/'+roomId,
+    defaultBtn : false,
+    enableFull : false,
+     isTopView : false
+}, function(ret, err) {
+
+});
+
+api.openFrame({
+        name: 'button',
+        url: 'button.html',
+        rect: {
+                x:0,
+                y:0,
+                w:winWidth,
+                h:240
+        },
+         pageParam: {
+                                  roomId: roomId
+                                  },
+       // bgColor: 'rgba(51,51,51,0)'
+    });
+
+obj.isFullScreen(function(ret, err) {
+    // alert(JSON.stringify(ret))
+  // alert(ret.status)
+
+
+
+ });
+
+
+
+}
+
+      function  fullscreen_act(){
+          var obj = api.require('playModule');
+          obj.full(function(ret, err) {
+          // alert(JSON.stringify(ret));
+              var jsfun = 'add_lis();';
+              api.execScript({
+              name: 'room',
+              script: jsfun
+              });
+          });
+
+      }
+
+function unfull_act(){
+var obj = api.require('playModule');
+    obj.unfull(function(ret, err) {
+
+        var jsfun = 'remove_lis();';
+              api.execScript({
+              name: 'room',
+              script: jsfun
+              });
+      
+    });
+
+}
+
+function _playUrl(roomId){
+      var obj = api.require('playModule');
+      obj.playUrl({
+          title: 'test',
+          url: 'rtmp://218.241.17.26/live/'+roomId,
+          defaultBtn: true
+      }, function(ret, err) {
+
+      });
+}
+</script>

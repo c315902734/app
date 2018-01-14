@@ -1,0 +1,689 @@
+.sidebar-list-2 li {
+  float: left;
+  height: 26px;
+  line-height: 26px;
+  margin: 0 7px 8px 0;
+  width: 45%;
+
+  list-style: outside none none;
+  vertical-align: top;
+}
+.sidebar-list-2 li a {
+  background-color: #3f3f3f;
+  border-radius: 2px;
+  color: #d0d0d0;
+  display: block;
+  overflow: hidden;
+  padding: 0 2px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.sidebar-list-2 li a:hover {
+    background-color: #f60;
+    color: #fff;
+        
+    
+}
+
+
+.nav-list > li {
+padding:10px;
+background: #2b2b2b;
+}
+
+.video-list-item {
+  border-bottom: 3px solid transparent;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  transition: border 400ms ease-in-out 0s;
+  margin-bottom: 22px;
+}
+.video-list-item .video-list-item-wrap {
+  background-color: #fff;
+  box-sizing: content-box;
+  color: #333;
+  display: block;
+  padding-bottom: 55px;
+  position: relative;
+  width: 100%;
+}
+.video-list-item .video-cover {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.video-list-item .video-cover .video-img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.video-list-item .video-cover .video-overlay {
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 250ms ease-out 0s;
+  z-index: 10;
+}
+.bg_h{
+    background: #f2f2f2;
+}
+.video-list-item .video-cover .video-play {
+  background-image: url("http://i9.pdim.gs/8d743bdec3c8a4b6730d1bc6b0cfab18.png");
+  height: 50px;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: scale(2);
+  transition: all 250ms ease-out 0s;
+  width: 50px;
+  z-index: 20;
+}
+.video-list-item .video-title {
+  bottom: 30px;
+  font-size: 14px;
+  left: 5px;
+  overflow: hidden;
+  position: absolute;
+  right: 80px;
+  text-overflow: ellipsis;
+  transition: all 250ms ease-out 0s;
+  white-space: nowrap;
+  z-index: 5;
+  text-align:left;
+}
+.video-list-item .video-info {
+  bottom: 0;
+  font-size: 12px;
+  height: 55px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+}
+.video-list-item .video-info .video-nickname {
+  background: rgba(0, 0, 0, 0) url("http://i8.pdim.gs/215adf54fcfe0cc52e924a670373eca2.png") no-repeat scroll 0 3px;
+  bottom: 7px;
+  color: #787878;
+  left: 5px;
+  overflow: hidden;
+  padding-left: 15px;
+  position: absolute;
+  right: 88px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+.video-list-item .video-info .video-number {
+  background: rgba(0, 0, 0, 0) url("http://i9.pdim.gs/5e2630d66e51d54abb59f49198fa5dd1.png") no-repeat scroll 0 3px;
+  bottom: 7px;
+  color: #787878;
+  padding-left: 17px;
+  position: absolute;
+  right: 5px;
+}
+.video-list-item .video-info .video-cate {
+  bottom: 31px;
+  color: #00a0ff;
+  overflow: hidden;
+  position: absolute;
+  right: 5px;
+  text-align: right;
+  text-overflow: ellipsis;
+  transition: all 250ms ease-out 0s;
+  white-space: nowrap;
+  width: 75px;
+}
+
+.huojian ,.Atlantis{
+  border: 1px solid #fff;
+  float: right;
+  height: 60px;
+  width: 60px;
+  cursor:pointer;
+}
+.liwu{padding:3px;}
+.identity {
+  background: #FEE136;
+  color: #fff;
+  margin-left: 8px;
+}
+#ace-settings-container{
+    display:none
+}
+ .unit {
+  background: #f5f5f5 none repeat scroll 0 0;
+  border: 1px solid #f5f5f5;
+/* float: left;
+margin: 0 25px 20px 0; */
+  padding: 1px;
+  text-align: left;
+
+}
+
+ .shadow {
+  cursor: pointer;
+  display: none;
+  height: 195px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 140px;
+  z-index: 10;
+}
+
+ .unit .title {
+  background: #fff none repeat scroll 0 0;
+  color: #7e7e7e;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 5px 0 4px 6px;
+  text-align: center;
+  white-space: nowrap;
+  word-break: break-all;
+  margin: 0;
+}
+
+ .unit .thumb {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+ .unit a:hover  .title{
+background-color: #f7f7f7;
+color: #f70;
+
+}
+.thumb:hover{
+    display: block;
+    opacity: 0.8;
+}
+.login-inside {
+  line-height: 67px;
+  position: absolute;
+  text-align: center;
+  width: 354px;
+}
+.nav-list > li > a > [class*="icon-"]:first-child {
+  color: #2b7dbc;
+
+}
+
+.navbar {
+  background: #f5f5f5 none repeat scroll 0 0;
+  border:1px solid #d1d1d1;
+
+}
+
+.breadcrumbs {
+  background-color: #fff;
+
+}
+.hover_ .fans-list{
+    max-height: 400px;
+}
+.level-1 {
+    background-position: 0 0;
+}
+.level-2 {
+    background-position: 0 -19px;
+}
+.level-3 {
+    background-position: 0 -38px;
+}
+.level-4 {
+    background-position: 0 -57px;
+}
+.level-5 {
+    background-position: 0 -76px;
+}
+.level-6 {
+    background-position: 0 -95px;
+}
+.level-7 {
+    background-position: 0 -114px;
+}
+.level-8 {
+    background-position: 0 -133px;
+}
+.level-9 {
+    background-position: 0 -152px;
+}
+.level-10 {
+    background-position: 0 -171px;
+}
+.level-11 {
+    background-position: 0 -190px;
+}
+.level-12 {
+    background-position: 0 -209px;
+}
+.level-13 {
+    background-position: 0 -228px;
+}
+.level-14 {
+    background-position: 0 -247px;
+}
+.level-15 {
+    background-position: 0 -266px;
+}
+.level-16 {
+    background-position: 0 -285px;
+}
+.level-17 {
+    background-position: 0 -304px;
+}
+.level-18 {
+    background-position: 0 -323px;
+}
+.level-19 {
+    background-position: 0 -342px;
+}
+.level-20 {
+    background-position: 0 -361px;
+}
+.level-21 {
+    background-position: 0 -380px;
+}
+.level-22 {
+    background-position: 0 -399px;
+}
+.level-23 {
+    background-position: 0 -418px;
+}
+.level-24 {
+    background-position: 0 -437px;
+}
+.level-25 {
+    background-position: 0 -456px;
+}
+.level-26 {
+    background-position: 0 -475px;
+}
+.level-27 {
+    background-position: 0 -494px;
+}
+.level-28 {
+    background-position: 0 -513px;
+}
+.level-29 {
+    background-position: 0 -532px;
+}
+.level-30 {
+    background-position: 0 -551px;
+}
+.level-31 {
+    background-position: 0 -570px;
+}
+.level-32 {
+    background-position: 0 -589px;
+}
+.level-33 {
+    background-position: 0 -608px;
+}
+.level-34 {
+    background-position: 0 -627px;
+}
+.level-35 {
+    background-position: 0 -646px;
+}
+.level-36 {
+    background-position: 0 -665px;
+}
+.level-37 {
+    background-position: 0 -684px;
+}
+.level-38 {
+    background-position: 0 -703px;
+}
+.level-39 {
+    background-position: 0 -722px;
+}
+.level-40 {
+    background-position: 0 -741px;
+}
+.level-41 {
+    background-position: 0 -760px;
+}
+.level-42 {
+    background-position: 0 -779px;
+}
+.level-43 {
+    background-position: 0 -798px;
+}
+.level-44 {
+    background-position: 0 -817px;
+}
+.level-45 {
+    background-position: 0 -836px;
+}
+.level-46 {
+    background-position: 0 -855px;
+}
+.level-47 {
+    background-position: 0 -874px;
+}
+.level-48 {
+    background-position: 0 -893px;
+}
+.level-49 {
+    background-position: 0 -912px;
+}
+.level-50 {
+    background-position: 0 -931px;
+}
+.level-51 {
+    background-position: 0 -950px;
+}
+.level-52 {
+    background-position: 0 -969px;
+}
+.level-53 {
+    background-position: 0 -988px;
+}
+.level-54 {
+    background-position: 0 -1007px;
+}
+.level-55 {
+    background-position: 0 -1026px;
+}
+.level-56 {
+    background-position: 0 -1045px;
+}
+.level-57 {
+    background-position: 0 -1064px;
+}
+.level-58 {
+    background-position: 0 -1083px;
+}
+.level-59 {
+    background-position: 0 -1102px;
+}
+.level-60 {
+    background-position: 0 -1121px;
+}
+.level-61 {
+    background-position: 0 -1140px;
+}
+.level-62 {
+    background-position: 0 -1159px;
+}
+.level-63 {
+    background-position: 0 -1178px;
+}
+.level-64 {
+    background-position: 0 -1197px;
+}
+.level-65 {
+    background-position: 0 -1216px;
+}
+.level-66 {
+    background-position: 0 -1235px;
+}
+.level-67 {
+    background-position: 0 -1254px;
+}
+.level-68 {
+    background-position: 0 -1273px;
+}
+.level-69 {
+    background-position: 0 -1292px;
+}
+.level-70 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV70.gif?20170222") no-repeat scroll 0 0;
+}
+.level-71 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV71.gif?20170222") no-repeat scroll 0 0;
+}
+.level-72 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV72.gif?20170222") no-repeat scroll 0 0;
+}
+.level-73 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV73.gif?20170222") no-repeat scroll 0 0;
+}
+.level-74 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV74.gif?20170222") no-repeat scroll 0 0;
+}
+.level-75 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV75.gif?20170222") no-repeat scroll 0 0;
+}
+.level-76 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV76.gif?20170222") no-repeat scroll 0 0;
+}
+.level-77 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV77.gif?20170222") no-repeat scroll 0 0;
+}
+.level-78 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV78.gif?20170222") no-repeat scroll 0 0;
+}
+.level-79 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV79.gif?20170222") no-repeat scroll 0 0;
+}
+.level-80 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV80.gif?20170222") no-repeat scroll 0 0;
+}
+.level-81 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV81.gif?20170222") no-repeat scroll 0 0;
+}
+.level-82 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV82.gif?20170222") no-repeat scroll 0 0;
+}
+.level-83 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV83.gif?20170222") no-repeat scroll 0 0;
+}
+.level-84 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV84.gif?20170222") no-repeat scroll 0 0;
+}
+.level-85 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV85.gif?20170222") no-repeat scroll 0 0;
+}
+.level-86 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV86.gif?20170222") no-repeat scroll 0 0;
+}
+.level-87 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV87.gif?20170222") no-repeat scroll 0 0;
+}
+.level-88 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV88.gif?20170222") no-repeat scroll 0 0;
+}
+.level-89 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV89.gif?20170222") no-repeat scroll 0 0;
+}
+.level-90 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV90.gif?20170222") no-repeat scroll 0 0;
+}
+.level-91 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV91.gif?20170222") no-repeat scroll 0 0;
+}
+.level-92 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV92.gif?20170222") no-repeat scroll 0 0;
+}
+.level-93 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV93.gif?20170222") no-repeat scroll 0 0;
+}
+.level-94 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV94.gif?20170222") no-repeat scroll 0 0;
+}
+.level-95 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV95.gif?20170222") no-repeat scroll 0 0;
+}
+.level-96 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV96.gif?20170222") no-repeat scroll 0 0;
+}
+.level-97 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV97.gif?20170222") no-repeat scroll 0 0;
+}
+.level-98 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV98.gif?20170222") no-repeat scroll 0 0;
+}
+.level-99 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV99.gif?20170222") no-repeat scroll 0 0;
+}
+.level-100 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV100.gif?20170222") no-repeat scroll 0 0;
+}
+.level-101 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV101.gif?20170222") no-repeat scroll 0 0;
+}
+.level-102 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV102.gif?20170222") no-repeat scroll 0 0;
+}
+.level-103 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV103.gif?20170222") no-repeat scroll 0 0;
+}
+.level-104 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV104.gif?20170222") no-repeat scroll 0 0;
+}
+.level-105 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV105.gif?20170222") no-repeat scroll 0 0;
+}
+.level-106 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV106.gif?20170222") no-repeat scroll 0 0;
+}
+.level-107 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV107.gif?20170222") no-repeat scroll 0 0;
+}
+.level-108 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV108.gif?20170222") no-repeat scroll 0 0;
+}
+.level-109 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV109.gif?20170222") no-repeat scroll 0 0;
+}
+.level-110 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV110.gif?20170222") no-repeat scroll 0 0;
+}
+.level-111 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV111.gif?20170222") no-repeat scroll 0 0;
+}
+.level-112 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV112.gif?20170222") no-repeat scroll 0 0;
+}
+.level-113 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV113.gif?20170222") no-repeat scroll 0 0;
+}
+.level-114 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV114.gif?20170222") no-repeat scroll 0 0;
+}
+.level-115 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV115.gif?20170222") no-repeat scroll 0 0;
+}
+.level-116 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV116.gif?20170222") no-repeat scroll 0 0;
+}
+.level-117 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV117.gif?20170222") no-repeat scroll 0 0;
+}
+.level-118 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV118.gif?20170222") no-repeat scroll 0 0;
+}
+.level-119 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV119.gif?20170222") no-repeat scroll 0 0;
+}
+.level-120 {
+    background: rgba(0, 0, 0, 0) url("../../res/page/room-normal/level/LV120.gif?20170222") no-repeat scroll 0 0;
+}
+.pdb8{
+  padding-bottom: 8px;
+}
+.mgt8{
+  margin-bottom: 8px;
+}
+
+.level-bgpng {
+  background-image: url("../image/level-csssprite.png");
+  display: inline-block;
+  height: 16px;
+  width: 40px;
+}
+
+.level-size1_ {
+  display: inline-block;
+  margin-bottom: 3px;
+  margin-right: 3px;
+}
+
+.cuserlevel {
+  vertical-align: middle;
+}
+
+.chat-user-card-holder {
+  height: 0;
+  position: absolute;
+  width: 0;
+  z-index: 312;
+}
+.chat-user-card-wrap {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 5px;
+  box-shadow: 0 0 8px #ccc;
+ 
+  position: relative;
+  width: 310px;
+}
+.chat-user-card-wrap .card-close {
+  color: #444;
+  font-size: 16px;
+  position: absolute;
+  right: 13px;
+  top: 0;
+  z-index: 1;
+}
+
+.chat-user-card {
+  padding: 7px;
+}
+.chat-user-card-wrap .user-card-avatar {
+  position: relative;
+}
+.chat-user-card-wrap .user-card-title {
+  margin-right: 16px;
+  overflow: hidden;
+  padding-bottom: 5px;
+  padding: 0px;
+  white-space: nowrap;
+}
+.user-card-title h1 {
+  color: #2c3e50;
+  font-size: 14px;
+  margin:0px;
+  overflow: hidden;
+  padding: 6px 0 2px;
+  text-overflow: ellipsis;
+  
+}
+.chat-user-card-wrap .user-card-action {
+  clear: left;
+  margin: 8px auto 0;
+  overflow: hidden;
+  padding-top: 8px;
+  white-space: nowrap;
+}
+.user-card-action .action-item {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  color: #666;
+  cursor: pointer;
+  float: left;
+  line-height: 23px;
+  margin: 0 4px 4px;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  font-size:12px;
+}
+.warning{
+    color:red;
+}

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="../themes/orange.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="../font/css/font-awesome.css" rel="stylesheet">
+
+        <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+      <link rel="stylesheet" type="text/css" href="../css/krosExt.css" />
+    <link rel="stylesheet" type="text/css" href="../css/list.css" />     
+     <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/main.js"></script>
+    <script type="text/javascript" src="../script/config.js"></script>
+ <script type='text/html' id='noDataTemplate'>
+            <div class="pro_list border-bottom" style="text-align:center;line-height:150px">没有找到直播间
+            </div>
+            </script>  
+<script type='text/html' id='loadingTemplate'>
+<div id="loading">
+<i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+</div>
+</script>
+ <script type='text/html' id='deliveInfoTemplate1'>
+                    <div class="col-md-6 col-xs-6 kros_overfollow">
+                    <div class="kros_overfollow">
+                        <a id="kros_a" onclick="goToPage('<%=roomUrl%>');"  ><img class="kros_img  " src="<%=uid%>.jpg" alt=""></a>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 col-xs-12 column left ">
+                            <div class="caption"><%=nicheng%>  ： <%=title%></div>
+                      </div>
+                    </div>
+                </div>
+  </script>
+<style>
+#header ul li.active {
+  display: block;
+}
+#header ul li {
+  color: #fff;
+  display: none;
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+}
+#header ul li.active {
+  display: block;
+}
+    .blue{color:#ff7700;}
+    .pdt20{padding-top: 20px;}
+   #Home {
+  background: #EEE;
+}
+.mgt20{
+    margin-top: 20px;
+}
+.border-t, .border-b {
+  position: relative;
+}
+#target{
+     display: block;
+}
+.ui-input-text input, .ui-input-search input {
+ 
+  min-height: 1.8em;
+}
+
+input, select, textarea, button, .ui-btn {
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 1.1;
+}
+</style>
+
+</head>
+
+<body>
+
+<div data-role="page"   class="content">
+  <div data-role="header" id="header" class="kros_header" data-position="fixed">
+        <a href="#" id="back" data-rel="back" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow">Back</a>
+        <a href="#" id="search" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-b ui-mini">搜索</a>
+        <ul>
+            <li class="border-b active"  style="padding-left:50px;padding-right:70px;">
+<input name="password" id="key_word" value="" placeholder="搜索房间/主播/分类" type="search" style="height:30px"></li>
+            </ul>
+        </div>
+
+<div role="main" id="target">
+
+    <div class=" mgt8">
+
+        <div data-demo-html="true" class="">
+            <ul data-role="listview" id="listview" data-inset="true" data-corners="false">
+             
+            </ul>
+        </div>
+
+           
+     
+    </div>
+</div>
+    </div>
+
+   
+
+</body>
+</html>
+<script>
+apiready = function(){
+
+var winWidth = api.winWidth;
+var winHeight = api.winHeight;
+
+
+//$(".content").css({ width:winWidth,height:winHeight});
+var header = $api.byId('header');
+$api.fixStatusBar(header);
+var  top=$api.dom('.border-b').offsetTop+3;
+$("#back,#search").css({ top:top});
+$("#search").css({ top:top-4});
+var  height=$api.dom('#header').offsetHeight+3;
+
+ var submit = $api.dom('#search');
+
+     $api.addEvt(submit, 'click', function(){
+key_word= $api.dom('#key_word');
+
+  key_word=$api.val(key_word);
+init(key_word)
+  })
+
+      
+}
+
+function init(key_word){
+
+     var loadingHtml = template.render('loadingTemplate',1);
+            $('#listview').append(loadingHtml);
+
+     var url = 'http://www.mcooz.com/index/search/json/1';
+
+           api.ajax({
+            url: url,
+            method: 'post',
+            data: {
+                values: {
+                    key_word: key_word
+                }
+            }
+        }, function(json, err) {
+/*jso=JSON.stringify(json.ext);
+          alert(jso);
+*/
+
+        var json2=json.ext
+
+        $('#loading').remove();
+ if(json.status==1){
+    $('#listview').empty();
+            for(var item in json2)
+        {
+          // alert(item)
+            json2[item].uid=__coverImagePath__+ json2[item].uid;
+
+            json2[item].roomUrl=__roomUrl__+ json2[item].uid;
+
+            var deliveRowHtml1 = template.render('deliveInfoTemplate1',json2[item]);
+            $('#listview').append(deliveRowHtml1);
+
+
+        }
+           }   else{
+
+                                            var chartsHtml = template.render('noDataTemplate',1);
+                                                $('#listview').empty().append(chartsHtml);
+                                    }
+
+
+        });
+}
+</script>
+
+
+

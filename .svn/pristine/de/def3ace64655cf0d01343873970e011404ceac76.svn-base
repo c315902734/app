@@ -1,0 +1,17 @@
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+   
+</head>
+<body>
+    <iframe seamless="" sandbox="" security="restricted" id="url_mainframe" scrolling="yes" name="main" src="http://www.mcooz.com/App/live" style="height:100%; visibility: inherit; width: 100%; z-index: 1;overflow: visible;" frameborder="0"></iframe>
+</body>
+
+</html>
+

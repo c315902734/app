@@ -1,0 +1,38 @@
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+   <script type="text/javascript" src="./script/api.js"></script>
+   <script>
+   apiready = function(){
+   var obj = api.require('playModule');
+obj.play({
+    rect:
+    {    x: 0,
+        y : 0,
+        w : 320,
+        h: 250
+    },
+    fixedOn: api.frameName,
+    title: 'test',
+    url: 'http://115.28.161.7:8134/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8',
+    defaultBtn: true,
+    enableFull : false,
+     isTopView : false
+}, function(ret, err) {
+
+});
+
+};</script>
+</head>
+<body>
+
+</body>
+
+</html>
+

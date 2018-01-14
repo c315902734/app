@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="../themes/orange.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="../font/css/font-awesome.css" rel="stylesheet">
+
+        <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+     <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+      <script type="text/javascript" src="../script/main.js"></script>
+
+<style>
+    .blue{color:#ff7700;}
+    .pdt20{padding-top: 20px;}
+     .kros_view li,.kros_view li a,.kros_view li i{font-size: 14px;font-weight: normal;font-style:normal; }
+</style>
+
+</head>
+
+<body>
+
+<div data-role="page" id="Home" data-theme="a">
+ 
+
+<div role="main">
+    <div class="kros_content ">
+
+    <div class="row clearfix  plr pdt20" id="user">
+        
+        </div>
+
+       
+        <ul data-role="listview" data-theme="b" class="kros_view">
+            <li><a href="#" onclick="SwitchBtn(8)" data-transition="flow" data-ajax="false"><i class="fa fa-jpy mgr6 blue"></i>我的收益</a></li>
+             <li><a href="#" onclick="SwitchBtn(9)" data-transition="flow" data-ajax="false">
+            <i class="fa fa-minus mgr6 blue" aria-hidden="true"></i>
+我的虾球</a></li>
+          <li><a href="#" onclick="goToPage('pay.html')" data-transition="flow" data-ajax="false">
+<!--             <i class="fa fa-yen mgr6 blue" aria-hidden="true"></i>
+在线充值</a></li> -->
+
+            <li><a href="#" onclick="SwitchBtn(10)" data-transition="flow" data-ajax="false"><i class="fa fa-angle-double-up mgr6 blue"></i>我的等级</a></li>
+            <li><a href="#" onclick="goToPage_('apply.html')" data-transition="flow" data-ajax="false"><i class="fa fa-file-text mgr6 blue"></i>我要当主播</a></li>
+               <li><a href="#" onclick="SwitchBtn(12)" data-transition="flow" data-ajax="false"><i class="fa fa-at mgr6 blue"></i>关于我们</a></li>
+            <li><a href="#" onclick="goToPage('log_out.html');" data-transition="flow" data-ajax="false"><i class="fa fa-cog mgr6 blue"></i>设置</a></li>
+       
+        </ul>
+    </div>
+</div>
+    </div>
+
+   
+
+</body>
+</html>
+<script type='text/html' id='userCenterTemplate'>
+
+  <div class="col-md-6 col-xs-6 column"  id="user">
+                <h4 class="text-left">
+                 <i class="fa fa-user mgr6 blue"> </i>  用户名:<span><%=username%></span>
+                    </h4>
+            </div>
+            <div class="col-md-6 col-xs-6 column">
+                <h4 class="text-left">
+                    直播:1
+                    </h4>
+            </div>
+</script>
+<script type='text/html' id='logTemplate'>
+    <div class="text-center"  >
+                 您还没有登录
+            </div>
+            <div class="text-center">
+                  <input class="ui-btn ui-shadow" odata-corners="false" onclick="goToPage('../login.html');" style="display:inline-block;font-size:13px;border-radius:50px;width:60%;font-weight:normal" value="立即登录" type="submit">
+            </div>
+</script>
+
+
+<script>
+    
+    apiready = function(){
+
+    init() 
+    
+
+      api.addEventListener({
+          name: 'accessEvent'
+      }, function(ret, err) {
+        /*alert(JSON.stringify(ret.value));
+        json=(ret.value)
+
+        alert(json.token)*/
+
+        init() 
+      });
+
+           api.addEventListener({
+          name: 'logOutEvent'
+      }, function(ret, err) {
+            init()
+      });
+
+
+
+
+
+}
+
+
+   function SwitchBtn(index) {
+
+         api.setFrameGroupIndex({
+            name: 'group',
+            index: index
+        });
+
+     }
+
+       function init() {
+
+                /*var userHtml = template.render('userTemplate',1);
+            $('#user').append(userHtml);
+*/
+
+
+
+        userArr= $api.getStorage('userArr');
+  
+        
+
+         if (userArr) {
+
+
+
+       var userCenterHtml = template.render('userCenterTemplate',userArr);
+
+
+
+
+            $('#user').empty().append(userCenterHtml);
+
+
+
+            }
+            else
+
+            {
+
+                 var logHtml = template.render('logTemplate',1);
+
+                 $('#user').empty().append(logHtml);
+
+
+
+            };
+
+     }
+
+     function goToPage_(page){
+         userArr= $api.getStorage('userArr');
+
+        if (userArr) {
+         api.openWin({
+                                        name: 'live',
+                                        url: page,
+                                        pageParam: {
+                                            name: 'test'
+                                        },
+                                      animation:  {
+                                        type:"push",                //动画类型（详见动画类型常量）
+                                        subType:"from_right",       //动画子类型（详见动画子类型常量）
+                                        duration:200                //动画过渡时间，默认300毫秒
+                                    }
+
+                                });
+
+          }
+            else
+
+            {
+                      api.toast({
+                    msg: '您尚未登录!',
+                    duration:2000,
+                    location: 'middle'
+                        });
+            }
+         }
+</script>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/main.js"></script>
+    <script type="text/javascript" src="../script/aui-tab.js" ></script>
+<style>
+#header ul li.active {
+  display: block;
+}
+#header ul li {
+  color: #fff;
+  display: none;
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+}
+#header ul li.active {
+  display: block;
+}
+    .blue{color:#ff7700;}
+    .pdt20{padding-top: 20px;}
+   #Home {
+  background: #EEE;
+}
+.mgt20{
+    margin-top: 20px;
+}
+.border-t, .border-b {
+  position: relative;
+}
+#target{
+     display: block;
+}
+#box li.active{display: block;}
+#box li {display: none;}
+/* .aui-iconfont {
+  font-family: "aui_iconfont";
+  font-size: 1.2rem;
+  font-style: normal;
+  position: relative;
+  display: block;
+  float: left;
+} */
+
+.aui-btn-info {
+  background: none;
+}
+button, .aui-btn {
+  background:#ff7700;
+ 
+}
+.aui-btn.aui-btn-info.aui-margin-r-8 {
+  margin-left: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div data-role="page"   class="content">
+  <div data-role="header" id="header" class="kros_header" data-position="fixed">
+        <a href="#kros_panel" id="back" data-rel="back" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow">Back</a>
+        <a href="#" onclick="goToPage('search.html');" id="search" data-ajax="false" class="ui-btn ui-btn-letf  ui-btn-corner-all ui-btn-icon-notext  ui-icon-search ui-shadow">search</a>
+        <ul>
+            <li class="border-b active" ></li>
+           
+            </ul>
+        </div>
+
+<div role="main" id="target" >
+    <div class="aui-tab" id="tab" style="margin-top:150px">
+        <div class="aui-tab-item aui-active">聊天</div>
+        <div class="aui-tab-item"><div></div>主播</div>
+        <div class="aui-tab-item">排行榜</div>
+        <div class="aui-tab-item">直播</div>
+    </div>
+<div id="box">
+    <li  class="active">12321312</li>
+    <li >
+    <div class="aui-list aui-media-list aui-list-noborder ">
+            <div class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner ">
+                    <div class="aui-list-item-media" style="width:3rem;">
+                        <img src="../image/demo1.png" class="aui-img-round" >
+                    </div>
+                    <div class="aui-col-xs-8">
+                    <div class="">
+                        <div class="aui-list-item-text text-white aui-font-size-18 aui-ellipsis-1">蛮王钻石段排位,实力凯瑞</div>
+                        <div class="aui-list-item-text text-white">
+                           <div>第一女蛮王\饭饭</div>
+                        </div>
+                         <div class="aui-list-item-text text-white">
+                         <div class="aui-font-size-12">体重:58.85t 分类:<span class="aui-text-primary">英雄联盟</span></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="aui-col-xs-2">
+                        <div class="">
+                        <div class="aui-btn" style="border-radius:30px;height:22px;line-height:22px;color:#fff">关注</div>
+                        <div class="aui-list-item-text text-white">
+                           <div style="padding-left:5px">46.8万</div>
+                        </div>
+                    </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        </li>
+    <li >  <div class="aui-bar aui-bar-btn aui-bar-btn-sm" style="width:80%;margin-top:10px">
+        <div class="aui-bar-btn-item aui-active">贡献日榜</div>
+        <div class="aui-bar-btn-item">贡献周榜</div>
+        <div class="aui-bar-btn-item">贡献总榜</div>
+    </div>
+    </li>
+    <li >123gff2</li>
+
+    </div>
+</div> 
+
+   <footer class="aui-bar aui-bar-tab" id="footer">
+          <li class="aui-list-item" >
+                <div class="aui-list-item-inner">
+                 <div class="aui-col-xs-9" style="margin-top:5px;border:1px solid #ddd;height:35px;margin-left:8px;border-radius:10px">
+                    <div class="aui-list-item-input aui-margin-l-1" style="margin-left:8px;" >
+                    <div class="aui-col-xs-6" >
+                        <input id="input"  type="text" style="height:30px" placeholder="请输入弹幕..">
+                    </div>
+                    </div>
+                    <div style="float:right;">
+                      <div class="aui-col-xs-2" style="border-left:1px solid ;width:10px;height:25px;float:left;margin-top:4px">
+                    </div>
+                    <div style="float:left;">
+                    <div class="aui-col-xs-8" >
+                    <i class="aui-iconfont aui-icon-paper" id="submit" style="font-size:22px;vertical-align:middle;text-align:center;margin-right:8px;margin-top:7px"></i>
+                    </div>
+                  </div>
+                    </div>
+                    </div>
+                     <div style="float:left">
+                    <div class=" aui-btn  aui-btn-info aui-margin-r-8 " id="gift" ><i class="aui-iconfont aui-icon-like"></i></div>
+                  </div>
+                </div>
+            </li>
+    </footer>
+    </div>
+
+   
+
+</body>
+</html>
+<script>
+apiready = function(){
+
+var winWidth = api.winWidth;
+var winHeight = api.winHeight;
+
+ api.parseTapmode();
+$(".content").css({ width:winWidth,height:winHeight});
+var header = $api.byId('header');
+$api.fixStatusBar(header);
+var  top=$api.dom('.border-b').offsetTop+3;
+$("#back,#search").css({ top:top});
+var  height=$api.dom('#header').offsetHeight+3;
+$("#target").css({ marginTop:top-3});
+var  top_=$api.dom('#input').offsetTop+7;
+$("#gift").css({ top:top_});
+//$("#tab").css({ top:'100px'});
+
+var obj = api.require('playModule');
+obj.play({
+    rect:
+    {    x: 0,
+        y : 0,
+        w : winWidth,
+        h: 240
+    },
+    fixedOn: api.frameName,
+    title: 'test',
+    url: 'http://7907.liveplay.myqcloud.com/live/7907_4e6b864b35dc11e791eae435c87f075e.m3u8 ',
+    defaultBtn : false,
+    enableFull : false,
+     isTopView : false
+}, function(ret, err) {
+
+});
+
+
+ var tab = new auiTab({
+        element:document.getElementById("tab"),
+    },function(ret){
+      // alert(JSON.stringify(ret))
+        xshowShow(ret.index-1)
+    });
+
+ var bar = document.querySelectorAll(".aui-bar-btn");
+    if(bar){
+        for(var i=0; i<bar.length;i++){
+            var d = bar[i];
+            var tab = new auiTab({
+                element:bar[i],
+                repeatClick:true
+            },function(ret){
+                if(ret.dom.parentNode.getAttribute("type") && ret.dom.parentNode.getAttribute("type")=="count"){
+                    var count = parseInt(document.getElementById("count").value);
+                    if(ret.index==2)return;
+                    if(ret.index==1){
+                        document.getElementById("count").value = count-1;
+                    }
+                    if(ret.index==3){
+                        document.getElementById("count").value = count+1;
+                    }
+                }
+            });
+
+        }
+    }
+}
+
+   
+function xshowShow(id) {
+            eHeaderLis = $api.domAll('#box li');
+              for(i = 0;i <= eHeaderLis.length;i++) {
+                    if(i == id){
+               $api.addCls( eHeaderLis[i], 'active');
+                    continue;
+                    }try {
+                    $api.removeCls(eHeaderLis[i], 'active');
+
+                    }catch(e){
+                    return true;
+                    }
+                    }
+}
+
+</script>
+
+
+

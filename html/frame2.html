@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="../themes/orange.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="../font/css/font-awesome.css" rel="stylesheet">
+
+        <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+      <link rel="stylesheet" type="text/css" href="../css/krosExt.css" />
+    <link rel="stylesheet" type="text/css" href="../css/list.css" />     
+       <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script> 
+    <script type="text/javascript" src="../script/main.js"></script>     
+     <script type='text/html' id='noDataTemplate'>
+            <div class="pro_list border-bottom" style="text-align:center;line-height:150px">当前暂无数据
+            </div>
+            </script>  
+<script type='text/html' id='loadingTemplate'>
+<div id="loading">
+<i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+</div>
+</script>
+ <script type='text/html' id='deliveInfoTemplate1'>
+                    <div class="col-md-6 col-xs-6 kros_overfollow">
+                    <div class="kros_overfollow">
+                        <a id="kros_a" onclick="goToPageRoom('room.html',<%=uid%>);"  ><img class="kros_img  " src="http://www.mcooz.com//upload/images/<%=item_id%>.jpg" alt=""></a>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 col-xs-12 column left ">
+                            <div class="caption"><%=nicheng%>  ： <%=title%></div>
+                      </div>
+                    </div>
+                </div>
+  </script>
+</head>
+
+<body>
+
+<div data-role="page" id="Home" data-theme="a">
+  
+    
+<section>
+    <div class="pending-detial mgt8">
+      
+
+        <div data-demo-html="true" class="">
+            <ul data-role="listview" id="listview" data-inset="true" data-corners="false">
+         
+       
+             
+            </ul>
+        </div>
+
+           
+     
+    </div>
+</section>
+
+
+    
+
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+ apiready = function(){
+        init()
+
+      api.addEventListener({
+          name: 'accessEvent'
+      }, function(ret, err) {
+ 
+        init()
+      });
+
+
+          api.addEventListener({
+          name: 'logOutEvent'
+      }, function(ret, err) {
+        //alert(JSON.stringify(ret.value));
+        init()
+      });
+
+
+};
+
+
+function init(){
+
+     var loadingHtml = template.render('loadingTemplate',1);
+            $('#listview').append(loadingHtml);
+
+     var url = 'http://www.mcooz.com/Member/follow';
+
+           api.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                values: {
+                    json: 1
+                }
+            }
+        }, function(json, err) {
+/*jso=JSON.stringify(json.ext);
+          alert(jso);
+*/
+
+        var json2=json.ext
+
+        $('#loading').remove();
+ if(json.status==1){
+    $('#listview').empty();
+            for(var item in json2)
+        {
+          // alert(item)
+            //
+            //console.log(1);
+
+            //console.log(item);
+
+            var deliveRowHtml1 = template.render('deliveInfoTemplate1',json2[item]);
+            $('#listview').append(deliveRowHtml1);
+
+
+        }
+           }   else{
+
+                                            var chartsHtml = template.render('noDataTemplate',1);
+                                                $('#listview').empty().append(chartsHtml);
+                                    }
+
+
+        });
+}
+
+  function goToPageRoom(page,val){
+         api.openWin({
+                                        name: 'room',
+                                        url: page,
+                                        pageParam: {
+                                            id: val
+                                        },
+                                      animation:  {
+                                        type:"push",                //动画类型（详见动画类型常量）
+                                        subType:"from_right",       //动画子类型（详见动画子类型常量）
+                                        duration:100                //动画过渡时间，默认300毫秒
+                                    }
+
+                                });
+         }
+</script>

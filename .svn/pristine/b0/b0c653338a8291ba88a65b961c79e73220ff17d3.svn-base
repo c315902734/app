@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 maximum-scale=2, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-title" content="Add to Home">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<title></title>	
+		<link href="../css/publi.css" rel="stylesheet" type="text/css">
+		<link href="../css/style_.css" rel="stylesheet" type="text/css">
+		<link href="../css/api.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="../themes/orange.min.css" />
+        <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <style>
+#header ul li.active {
+  display: block;
+}
+#header ul li {
+  color: #fff;
+  display: none;
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+}
+#header ul li.active {
+  display: block;
+}
+    .blue{color:#ff7700;}
+    .pdt20{padding-top: 20px;}
+   #Home {
+  background: #EEE;
+}
+.mgt20{
+    margin-top: 20px;
+}
+.border-t, .border-b {
+  position: relative;
+}
+#target{
+     display: block;
+}
+</style>
+	</head>
+
+	<body>
+	  <div data-role="header" id="header" class="kros_header" data-position="fixed">
+        <ul>
+            <li class="border-b active" >主播申请</li>
+           
+            </ul>
+        </div>
+		<header class="acc_head">
+			<div class="clearfix">
+				<h1 class="tc" style="height:28px"></h1>
+				
+			</div>
+
+		</header>
+		<section class="acc_apply">
+			<ul>
+			
+				<li class="clearfix">
+					<label class="tl acc_five">身份证姓名：</label>
+					<input id="full_name" autocomplete="off" placeholder="请输入姓名" class="" type="text" />
+				</li>
+				<li class="clearfix">
+					<label class="tl acc_five">身份证号码：</label>
+					<input id="id_card" autocomplete="off" placeholder="请输入身份证号码" class="" type="text" />
+				</li>
+				<li class="clearfix" >
+					<label class="tl acc_four fl">证件照片：</label>
+				</li>
+				<li style="border-top: 0; margin-bottom: 60px;">
+					<div class="acc_img">
+						<p class="tc">参考样例</p>
+						<div id="sss">
+							<img class="acc_imgin" src="../image/acc_img.png" id="img0">
+						</div>
+						<div class="acc_sc">
+							<a href="javascript:;" class="tc acc_scicon" id="selectImg" >上传图片</a>
+							
+
+						</div>
+						<p class="ph09 ">注：身份证上的所有信息清晰可见，必须能看清证件号。照片需免冠，建议未化妆。手持证件人的五官清晰可见。照片内容真实有效。不得做任何修改。支持jpg、jpeg、bmp、gif格式照片。大小不超过5M</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<footer class="acc_foot clearfix">
+			<a href="#" class="fl tc acc_cancel">取消</a>
+			<a href="#" id="submit" class="fl tc acc_sure">提交</a>
+		</footer>
+		<!--弹出层-->
+		<article id="tip">
+			<div class="pack">
+				<h1 class="tc">提交成功</h1>
+				<p class="tc"></p>
+				<a href="#">确定</a>
+			</div>
+		</article>
+		<!-- 网站要用到的一些类库 -->
+		<script type="text/javascript" src="http://web.mcooz.com/js/jquery-1.11.1.min.js"></script>
+		<script src="../script/script.js"></script>
+		<script type="text/javascript" src="../script/api.js"></script>
+		<script type="text/javascript">
+		
+			
+
+ var _img_;
+   $("#selectImg").click(function() {
+
+	api.getPicture({
+	    sourceType: 'library',
+	    encodingType: 'jpg',
+	    mediaValue: 'pic',
+	    destinationType: 'url',
+	    allowEdit: true,
+	    quality: 50,
+	    targetWidth: 100,
+	    targetHeight: 100,
+	    saveToPhotoAlbum: false
+	}, function(ret, err) {
+	    if (ret) {
+	        //alert(JSON.stringify(ret));
+	        // alert(ret.data)
+
+	        	 var url = 'http://www.mcooz.com/Member/ajax_upload_img';
+
+	           api.ajax({
+	            url: url,
+	            method: 'post',
+	            data: {
+		 files: {
+	                     img: ret.data
+	        	 	}
+	        }
+	        }, function(json, err) {
+
+			if (ret.data!='') {
+				$("#img0").attr("src", ret.data);
+				   	alert(json.message)
+	        /*	alert(json.ext.info[0].name)*/
+	        	if(json){
+	        		_img_=json.ext.info[0].savepath+json.ext.info[0].savename;
+
+	        	// alert(_img_)	
+	        	}
+			};
+	     
+	        
+
+
+	        	   });
+
+
+	    } else {
+	        alert("上传失败");
+	    }
+	});
+
+
+   	
+   
+});
+
+$("#submit").click(function() {
+
+
+
+	full_name= $api.dom('#full_name');
+	id_card = $api.dom('#id_card ');
+	full_name=$api.val(full_name);
+	id_card=$api.val(id_card);
+ 	 var url = 'http://www.mcooz.com/Member/identity_authentication';
+
+           api.ajax({
+	            url: url,
+	            method: 'post',
+	          data: {
+	                values: {
+	                    full_name: full_name,
+	                    id_card:id_card,
+	                    img:_img_
+	                }
+            }
+	        }, function(json, err) {
+	        	if (json.status==1) {
+
+	        		alert(json.message);
+	        		api.closeWin(); 
+
+
+
+	        	} else{
+	        	alert(json.message);	
+	        	};
+
+	        	
+
+
+});
+
+	});
+
+apiready = function(){
+
+var winWidth = api.winWidth;
+var winHeight = api.winHeight;
+
+
+var header = $api.byId('header');
+$api.fixStatusBar(header);
+var  top=$api.dom('.border-b').offsetTop+3;
+$("#back,#search").css({ top:top});
+var  height=$api.dom('#header').offsetHeight+3;
+$("#target").css({ marginTop:top-3});
+}
+</script>
+	</body>
+
+</html>

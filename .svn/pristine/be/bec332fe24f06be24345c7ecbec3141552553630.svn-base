@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消息_龙虾直播</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="../themes/orange.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="../font/css/font-awesome.css" rel="stylesheet">
+
+        <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+       <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>      
+<style>
+    .ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited {
+  border-color: #dddddd;
+  text-shadow: 0 1px 0 #f3f3f3;
+  background: #fff;
+  color: #555
+}
+#loading {
+  margin: 50px auto 0;
+  width: 100%;
+  padding-left: 42%;
+}
+#loading i{
+    color:#ff7700;
+}
+</style>
+  <script type='text/html' id='msgTemplate'>
+    <li class="ui-first-child">
+               <a  class="ui-btn ">
+                    <h2><%=title%></h2>
+                    <p><strong><%=content%></strong></p>
+                
+                        <p class="ui-li-aside"><strong><%=time%></strong></p>
+                    </a>
+                </li>
+            </script>
+             <script type='text/html' id='noDataTemplate'>
+                <div class="pro_list border-bottom" style="text-align:center;line-height:150px">当前暂无数据
+            </div>
+            </script>  
+            <script type='text/html' id='loadingTemplate'>
+<div id="loading">
+<i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+
+</div>
+</script>
+</head>
+
+<body>
+
+<div data-role="page" id="Home" data-theme="a">
+  
+    
+<section>
+    <div class="pending-detial">
+      
+     
+        
+
+        <div data-demo-html="true" class="">
+            <ul data-role="listview" id="listview" data-inset="true" data-corners="false">
+         
+       
+             
+            </ul>
+        </div>
+
+           
+     
+    </div>
+</section>
+
+
+    
+
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+ apiready = function(){
+init()
+
+};
+
+
+function init(){
+
+     var loadingHtml = template.render('loadingTemplate',1);
+            $('#listview').append(loadingHtml);
+
+     url = 'http://www.mcooz.com/Member/message_json';
+
+            api.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                values: {
+                    chartsId: 1,
+                    type:0,
+                    to_id:1
+                }
+            }
+        }, function(json, err) {
+
+              $('#loading').remove();
+        if(json.status==1){
+
+
+      json=json.ext
+                                    
+                                     for(var item in json)
+                                                 {
+                                                  
+                                               //alert(json[item])
+                                                //console.log(item);
+                                                var chartsHtml = template.render('msgTemplate',json[item]);
+                                                $('#listview').append(chartsHtml);
+
+                                                }
+                                    }
+                                    else{
+
+                                            var chartsHtml = template.render('noDataTemplate',1);
+                                                $('#listview').append(chartsHtml);
+                                    }
+
+                  });
+}
+</script>

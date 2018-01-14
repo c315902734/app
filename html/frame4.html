@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>巨星排行榜_龙虾直播</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="../themes/orange.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="../font/css/font-awesome.css" rel="stylesheet">
+
+        <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+      <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.mcooz.com/Public/krosExt.css" />
+
+
+
+       <style>
+ .contribution {
+            margin-bottom: 30px;
+            margin-top: 5px;
+            min-height: 110px;
+            padding-bottom: 6px;
+            padding-top: 0;
+            text-align: center;
+            transition: margin-bottom 0.4s ease 0s;
+            width: 33%;
+            float:left;
+            margin: 7px 0;
+            position: relative;
+            white-space: nowrap;
+            }
+ .kros-avatar {
+  display: block;
+  height: 74px;
+  margin: 0 auto;
+  position: relative;
+  width: 63px;
+}
+ .kros-avatar img {
+  height: 58px;
+  margin-left: -3px;
+  margin-top: 15px;
+  width: 58px;
+}
+ .kros-icon {
+  background: rgba(0, 0, 0, 0) url(../image/contribution-item-icon2.png) no-repeat scroll 0 0;
+
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.fans-list {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 4px 4px 0 0;
+  max-height: 100%;
+  min-height: 100%;
+  position: absolute;
+  transition: max-height 0.3s ease 0s;
+  overflow: hidden;
+  width:100%;
+}
+.fans-rank {
+  height: 191px;
+  z-index: 200;
+  position: relative;
+}
+
+.kros-2 .kros-avatar {
+  height: 82px;
+  width: 70px;
+}
+.kros-2 img {
+  height: 68px;
+  margin-left: 0;
+  margin-top: 14px;
+  width: 68px;
+}
+.kros {
+  margin: 7px 0;
+  position: relative;
+  white-space: nowrap;
+  list-style-type: none;
+}
+.kros-4 {
+  clear: both;
+}
+.nav-tabs > li > a, .nav-tabs > li > a:focus {
+  margin-right: 0px;
+}
+ .kros-2 .kros-icon {
+  background: rgba(0, 0, 0, 0) url(../image/contribution-item-icon1.png) no-repeat scroll 0 0;
+ }
+  .kros-3 .kros-icon {
+  background: rgba(0, 0, 0, 0) url(../image/contribution-item-icon3.png) no-repeat scroll 0 0;
+ }
+ .level-bgpng {
+  background-image:  url(../image/level-csssprite.png);
+  display: inline-block;
+  height:16px;
+  width:40px;
+}
+.kros-1 .r-nick,.kros-2 .r-nick,.kros-3 .r-nick{
+    display: block;
+}
+ .n-icon {
+  background: #eee none repeat scroll 0 0;
+  border-radius: 50%;
+  color: #999;
+  display: inline-block;
+  font-style: normal;
+  height: 20px;
+  line-height: 20px;
+  margin-right: 10px;
+  text-align: center;
+  width: 20px;
+  vertical-align:middle;
+}
+.kros-1 .r-nick,.kros-3 .r-nick{
+ 
+  margin-top:10px;
+  color: #797f89;
+  display: block;
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  max-width: 95%;
+  padding-left: 0;
+  text-align: center;
+  width: 95%;
+}
+
+
+ .cuserlevel {
+  vertical-align: middle;
+}
+.chat-cont .c-list .user_level, .chat-cont .c-list img, .chat-cont .c-list li .rank-wel .user-level, .chat-cont .c-list li .rank-wel a, .chat-cont .c-list li .task-wel .user-level, .chat-cont .c-list li .task-wel a, .chat-cont .chat-cls .icon, .fans-list .f-tit .vip img, .fans-rank .r-list li .l-icon img, .fans-rank .r-list li .n-icon, .r-list .noble-level img {
+  vertical-align: middle;
+}
+ .r-nick {
+  color: #797f89;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  max-width: 110px;
+  overflow: hidden;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-break: break-all;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+.video-list.clearfix {
+  width: 368px;
+  background: #fff;
+}
+.pdl6{
+    padding-left: 6px;
+}
+.js-nick:hover{
+    text-decoration: none
+}
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+#loading {
+  margin: 50px auto 0;
+  width: 100%;
+  padding-left: 42%;
+}
+#loading i{
+    color:#ff7700;
+}
+                </style>
+
+
+ <script type='text/html' id='chartsTemplate_1'>
+
+ <a href="javascript:;" class="js-nick" is-show-super-icon="0" data-ranktype="week" data-rel="user-info" avatar="avatar/006/10/66/93_avatar" rel="6106693" gid="1" data-level="15" data-noble="0" data-invisible="0" data-invisiblenick="">
+            <span class="kros-avatar">
+                <img src="<%=portrait%>"><i class="kros-icon"></i>
+            </span>
+            <span class="r-nick" title="CloveM"><%=nicheng%></span>
+        </a>
+        <span class="l-icon cuserlevel level-<%=grade_level%> level-bgpng  level-size1" data-uid="6106693"  selector="user-level"></span>
+        
+        </script>   
+
+         <script type='text/html' id='chartsTemplate_2'>
+         <a href="javascript:;" class="js-nick" is-show-super-icon="0" data-ranktype="week" data-rel="user-info" avatar="avanew/face/201705/17/12/9e88d0c302954feac5122e1ea82ae244" rel="63419018" gid="1" data-level="48" data-noble="4" data-invisible="0" data-invisiblenick="">
+            <span class="kros-avatar">
+                <img src="<%=portrait%>"><i class="kros-icon"></i>
+            </span>
+            <span class="r-nick" title=""><%=nicheng%></span>
+        </a>
+        <span class="noble-level">
+        </span>
+        <span class="l-icon cuserlevel level-<%=grade_level%> level-bgpng  level-size1" data-uid="63419018" title="" selector="user-level"></span>
+            </script>  
+
+ <script type='text/html' id='chartsTemplate_3'>
+<a href="javascript:;" class="js-nick" is-show-super-icon="0" data-ranktype="week" data-rel="user-info" avatar="avatar/default/11" rel="53211322" gid="1" data-level="8" data-noble="0" data-invisible="0" data-invisiblenick="">
+            <span class="kros-avatar">
+                <img src="<%=portrait%>"><i class="kros-icon"></i>
+            </span>
+            <span class="r-nick" title=""><%=nicheng%></span>
+        </a>
+        <span class="l-icon cuserlevel level-<%=grade_level%> level-bgpng  level-size1" data-uid="53211322"  selector="user-level"></span>
+  </script> 
+
+        <script type='text/html' id='chartsTemplate_10'>
+              <li class="kros kros-4 pdl6"><i class="n-icon"><%=chartsId%></i>
+        <span class="noble-level">
+        </span>
+        <span class="l-icon cuserlevel level-<%=grade_level%> level-bgpng  level-size1" data-uid="299704"  selector="user-level"></span>
+        <a href="javascript:;" class="js-nick" is-show-super-icon="0" data-ranktype="week" data-rel="user-info" avatar="avanew/face/201702/21/21/1bcf3d57e49ebb236a91a2e3fd45943a" rel="299704" gid="1" data-level="33" data-noble="1" data-invisible="0" data-invisiblenick="">
+            <span class="r-nick" title=""><%=nicheng%></span>
+        </a>
+        <span class="r-img rank-up" title=""></span>
+    </li>
+        </script>  
+  <script type='text/html' id='noDataTemplate'>
+                <div class="pro_list border-bottom" style="text-align:center;line-height:150px">当前暂无数据
+            </div>
+            </script>  
+                    <script type='text/html' id='loadingTemplate'>
+<div id="loading">
+<i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+
+</div>
+</script>    
+<script type="text/javascript" src="../script/api.js"></script>              
+<script type='text/javascript'>
+         function  charts(){
+             var loadingHtml = template.render('loadingTemplate',1);
+            $('#krosrow1').append(loadingHtml);
+
+            url = 'http://www.mcooz.com/index/charts';
+
+            api.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                values: {
+                    chartsId: 1,
+                    type:0,
+                    to_id:1
+                }
+            }
+        }, function(json, err) {
+
+            $('#loading').remove();
+
+        if(json.nicheng==null||json.nicheng==''||!json.nicheng){
+                                       $('#charts_'+1).css({'display':'none'});
+                                    
+                                        var chartsHtml = template.render('noDataTemplate',1);
+                                                $('#krosrow1').append(chartsHtml);
+                                    }
+                                    else{
+                                      json.portrait=__upload__+json.portrait
+                                                var chartsHtml = template.render('chartsTemplate_'+1,json);
+                                                $('#charts_'+1).append(chartsHtml);
+                                    }
+
+                  });
+
+            api.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                values: {
+                    chartsId: 2,
+                    type:0,
+                    to_id:1
+                }
+            }
+        }, function(json, err) {
+
+        if(json.nicheng==null||json.nicheng==''||!json.nicheng){
+                                       $('#charts_'+2).css({'display':'none'});
+                                          //alert(1)
+                                    
+                                    }
+                                    else{
+                                               json.portrait=__upload__+json.portrait
+                                                var chartsHtml = template.render('chartsTemplate_'+2,json);
+                                                $('#charts_'+2).append(chartsHtml);
+                                    }
+
+                  });
+
+
+            api.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                values: {
+                    chartsId: 3,
+                    type:0,
+                    to_id:1
+                }
+            }
+        }, function(json, err) {
+
+        if(json.nicheng==null||json.nicheng==''||!json.nicheng){
+                                       $('#charts_'+3).css({'display':'none'});
+                                          //alert(1)
+                                    
+                                    }
+                                    else{
+                                                json.portrait=__upload__+json.portrait
+                                                var chartsHtml = template.render('chartsTemplate_'+3,json);
+                                                $('#charts_'+3).append(chartsHtml);
+                                    }
+
+                  });
+
+               api.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                values: {
+                    chartsId: 1,
+                    type:1,
+                    to_id:1
+                }
+            }
+        }, function(json, err) {
+
+                 if(json==null){
+                                    
+                                    }
+                                    else{
+                                                //json.portrait=__upload__+json.portrait
+                                             for(var item in json)
+                                                 {
+                                               //alert(json[item])
+                                                //console.log(item);
+                                                var chartsHtml = template.render('chartsTemplate_10',json[item]);
+                                                $('#charts_10').append(chartsHtml);
+
+                                                }
+                                    }
+
+                  });
+
+
+
+                  
+        }
+
+</script>
+</head>
+
+<body>
+
+<div data-role="page" id="Home" data-theme="a">
+
+  
+<section>
+    <div class="pending-detial">
+        <div class="panel panel-default">
+        <div class="row clearfix bt1">
+            <div class="col-md-12 column">
+                <h3>
+                   <strong>用户贡献榜</strong>
+                </h3>
+            </div>
+        </div>
+        
+            <div  class="video-list clearfix" id="krosrow1">
+                <ul class="r-list clearfix">
+              <li class="kros contribution kros-1" id="charts_2">
+                   
+                </li>
+                <li class="kros contribution kros-2" id="charts_1">
+                   
+                </li>
+                <li class="kros contribution kros-3" id="charts_3">
+                    
+                </li>
+            <div id="charts_10">
+              
+             </div>
+
+            </ul>
+            </div>
+
+    
+           
+        </div>
+    </div>
+</section>
+
+
+    
+
+  
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+var __upload__="http://www.mcooz.com/upload/Portrait/";
+
+ apiready = function(){
+
+api.loadSecureValue({
+    key: 'appKey'
+}, function(ret, err) {
+    var appKey = ret.value;
+    //alert(appKey)
+});
+
+charts();
+};
+</script>

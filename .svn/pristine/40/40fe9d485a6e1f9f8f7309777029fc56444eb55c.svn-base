@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录_龙虾直播</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/themes/blue.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="font/css/font-awesome.css" rel="stylesheet">
+
+        <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+
+
+</head>
+<body>
+
+<div data-role="page" id="Home" data-theme="a">
+    <div data-role="header" class="kros_header" data-position="fixed">
+        <a href="index" data-rel="back" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow">Back</a>
+        <a href="{url:/site/search}" class="ui-btn ui-btn-letf  ui-btn-corner-all ui-btn-icon-notext  ui-icon-search ui-shadow">search</a>
+        <h1>登录</h1>
+    </div>
+    <div class="container">
+        <div role="main">
+            <div class="kros_content ">
+                <div class="row pbt20">
+                    <div class="col-md-12 col-xs-12 ">
+                        <h1 class="tc">龙虾直播</h1>
+                        <p class="tc"></p>
+                    </div>
+                </div>
+              
+                    <input type="hidden" name='callback' />
+                    <div>
+                        <input type="text" name="login_info" id="username" placeholder="用户名" value="" data-corners="false">
+                        <input type="password" name="password" id="password" placeholder="密码" value="" data-corners="false">
+                    </div>
+                    <div>
+                        <input class="ui-btn ui-shadow" type="submit" id="submit" value="立即登录" data-corners="false">
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a"> <a href="reg.html" data-transition="slide"><h4>还没有注册?</h4></a></div>
+                            <div class="ui-block-b"> <a href="find_password.html" data-transition="slide"><h4 class="text-right">忘记密码</h4></a></div>
+                        </div>
+                    </div>
+                    <div>
+                   
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script>
+
+ apiready = function(){
+ var submit = $api.dom('#submit');
+   var username;
+    var password ;
+ 
+
+//登陆
+    $api.addEvt(submit, 'click', function(){
+username= $api.dom('#username');
+   password = $api.dom('#password');
+   username=$api.val(username);
+  password=$api.val(password);
+
+
+
+/*alert(username);
+alert(password);*/
+
+url = 'http://www.mcooz.com/Login/login_act_app';
+api.ajax({
+            url: url,
+            method: 'post',
+            data: {
+                values: {
+                    username: username,
+                    password:password
+                }
+            }
+        }, function(json, err) {
+
+            alert(json.status);
+
+      
+
+        });
+
+
+
+
+});
+};
+</script>

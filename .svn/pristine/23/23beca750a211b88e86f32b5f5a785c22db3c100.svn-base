@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>龙虾直播</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/themes/blue.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="font/css/font-awesome.css" rel="stylesheet">
+      <script type="text/javascript" charset="UTF-8" src="http://www.mcooz.com/PUBLIC/artTemplate/artTemplate.js"></script>
+<script type="text/javascript" charset="UTF-8" src="http://www.mcooz.com/PUBLIC/artTemplate/artTemplate-plugin.js"></script>
+    <script type="text/javascript" src="http://wanjia.mcooz.com/views/mobile_basic/javascript/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="./script/api.js"></script>
+
+    <script type="text/javascript">
+		var $ = jQuery.noConflict();
+		$(window).load(function() {
+		$('.flexslider').flexslider({
+		animation: "slide",
+		directionNav: false,
+		animationLoop: false,
+		controlNav: false,
+		slideToStart: 0,
+		slideshow: true,
+		animationDuration: 300
+		});
+		});
+		//$.mobile.ajaxEnabled=false;
+
+
+
+    </script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artdialog/artDialog.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artdialog/plugins/iframeTools.js"></script><link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/artdialog/skins/aero.css" />
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
+</head>
+<body>
+<div data-role="page">
+
+            <div data-role="header" class="kros_header" data-position="fixed">
+        <a href="#kros_panel" data-rel="back" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow">Back</a>
+        <a href="/index.php?controller=site&action=search" data-ajax="false" class="ui-btn ui-btn-letf  ui-btn-corner-all ui-btn-icon-notext  ui-icon-search ui-shadow">search</a>
+        <h1>龙虾直播</h1>
+        </div>
+    <style>
+.col-md-10.col-xs-10.column.left.pd5 > div {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.col-md-10.col-xs-10.column.left.pd5 {
+    padding-left: 0;
+}
+
+.slides img {
+    min-height: 190px;
+    width: 100%;
+}
+
+.text-area {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+#kros_header {
+    display: none;
+}
+
+#loading {
+  margin: 50px auto 0;
+  width: 100%;
+  padding-left: 42%;
+}
+#loading i{
+    color:#3f79ee;
+}
+
+.col-md-6.col-xs-6.kros_overfollow {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.kros_img{
+    height:95px;
+       -moz-border-radius: 8px; 
+
+    -webkit-border-radius: 8px; 
+
+    border-radius:8px;   
+}
+.kros_overflow{
+     border: 1px solid #000000;
+
+  
+}
+</style>
+
+<div role="main">
+    <div class=" kros_content">
+        <div class="ui-grid-solo flexslider" style="max-height:190px">
+                        <ul class="slides">
+                                <li> <img src="https://rpic.douyucdn.cn/a1705/04/15/71017_170504154329.jpg" alt="">
+                    <p class="slider-description"></p>
+                </li>
+                                <li> <img src="https://staticlive.douyucdn.cn/upload/signs/201701221442539063.jpg" alt="">
+                    <p class="slider-description"></p>
+                </li>
+                                <li> <img src="https://staticlive.douyucdn.cn/upload/signs/201704282023227300.jpg" alt="">
+                    <p class="slider-description"></p>
+                </li>
+                            </ul>
+                    </div>
+        <div class="ui-grid-a">
+            <div class="ui-grid-solo">
+                <div class="ui-bar ui-bar-a" style="max-height:30px">
+                    <p>龙虾直播</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-content1 kros_content">
+        <!--菜单 开始-->
+        <div class="row row_category " style="margin-top:15px;">
+            <div class="row clearfix" style="padding-left:15px;padding-right:15px">
+                <div class="col-md-3 col-xs-3 column  kros_li">
+                    <div class="text-center">
+                        <a data-ajax="false" href="/index.php?controller=site&action=sitemap">
+                            <span class="fa-stack fa-lg kros_span">
+                        <i class="fa fa-circle fa-stack-2x kros_i" style="color:#ffb700"></i>
+                        <i class="fa fa-trophy fa-stack-1x fa-inverse "></i>
+                    </span>
+                        </a>
+                        <p>排行榜</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-3 column kros_li">
+                    <div class="text-center">
+                        <a data-ajax="false" href="live.html">
+                            <span class="fa-stack fa-lg kros_span">
+                        <i class="fa fa-circle fa-stack-2x kros_i" style="color:#ff67b9"></i>
+                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse "></i>
+                    </span>
+                        </a>
+                        <p>消息</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-3 column kros_li">
+                    <div class="text-center">
+                        <a data-ajax="false" href="/index.php?controller=site&action=groupon">
+                            <span class="fa-stack fa-lg kros_span">
+                        <i class="fa fa-circle fa-stack-2x kros_i" style="color:#56b2ff"></i>
+                        <i class="fa fa-bell-o fa-stack-1x fa-inverse "></i>
+                    </span>
+                        </a>
+                        <p>活动</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-3 column kros_li">
+                    <div class="text-center">
+                        <a data-ajax="false" href="/index.php?controller=ucenter&action=favorite">
+                            <span class="fa-stack fa-lg kros_span">
+                        <i class="fa fa-circle fa-stack-2x kros_i" style="color:#ff6d57"></i>
+                        <i class="fa fa-video-camera fa-stack-1x fa-inverse "></i>
+                    </span>
+                        </a>
+                        <p>全部直播</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--菜单 结束-->
+                <span class="fa fa-paperclip"></span>
+        <div class="yui3-u-20-24 kros_t">最热</div>
+        <div class="container">
+            <div class="row kros_margin"  id="krosrow1">
+             
+ <script type='text/html' id='deliveInfoTemplate1'>
+                              <div class="col-md-6 col-xs-6 kros_overfollow">
+                    <div class="kros_overfollow">
+                        <a id="kros_a" onclick="goToPage('http://www.mcooz.com/App/live');"  ><img class="kros_img  " src="http://www.mcooz.com//upload/images/<%=uid%>.jpg" alt=""></a>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 col-xs-12 column left ">
+                            <div class="caption"><%=nicheng%>  ： <%=title%></div>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+            </script>
+ 
+                            </div>
+        </div>
+
+    </div>
+    <div data-role="panel" id="kros_panel" data-position="left" data-display="push" data-theme="a">
+                <div class="row clearfix">
+            <div class="col-md-12 column">
+                <h1 class="text-center">
+                    龙虾直播                    </h1>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+            
+                    <div class="form-group">
+                        <input data-corners="false" class="form-control" name="username" id="username" placeholder="用户名" type="text"   />
+                    </div>
+                    <div class="form-group">
+                        <input data-corners="false" class="form-control" name="password" id="password" placeholder="密码" type="password" />
+                    </div>
+                    <button type="submit" id="submit" data-corners="false" class="btn ">登录</button>
+            
+                <h5 class="text-center">
+                    <a href="reg.html"  data-transition="slide">还没有账号?点此注册</a>
+                    </h5>
+            </div>
+        </div>
+            </div>
+</div>
+
+
+
+
+<div data-role="footer"  data-position="fixed" style="background-color: #fcfcfc;border-width:0" data-theme="c">
+    <div data-role="navbar" data-grid="c"  data-position="fixed" style="background-color: #fcfcfc;border-color:#fcfcfc">
+        <ul>
+            <li><a href="index.html"   data-ajax="FALSE" style="background-color: #fcfcfc;border-color:#fcfcfc"  data-icon="home">首页</a></li>
+            <li><a href="/index.php?controller=simple&action=cart" data-transition="flip" data-ajax="false" style="background-color: #fcfcfc;border-color:#fcfcfc" data-icon="heart" data-theme="">关注</a></li>
+            <li><a href="/index.php?controller=ucenter&action=index" data-icon="user" style="background-color: #fcfcfc;border-color:#fcfcfc"  data-transition="flow" rel="external">我的</a></li>
+            <li><a href="#" data-icon="arrow-u" style="background-color: #fcfcfc;border-color:#fcfcfc"  class="returnTopAction">回到顶部</a></li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+<div data-role="page" id="two" data-theme="a">
+
+    <div data-role="header">
+        <h1>Two</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h2>Two</h2>
+        <p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>
+        <p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
+        <p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to page "one"</a></p>
+
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div><!-- /footer -->
+</div><!-- /page two -->
+
+<script type='text/html' id='userCenterTemplate'>
+ <div class="ui-panel-inner"><ul data-role="listview" data-theme="b" class="kros_view ui-listview ui-group-theme-b">
+            <li class="ui-first-child"><a data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user" href="/index.php?controller=ucenter&amp;action=index"><%=username%>的个人中心</a></li>
+            <li><a data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-tag" href="/index.php?controller=ucenter&amp;action=order" data-transition="slidefade">我的关注</a></li>
+      
+            <li><a data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-power" id="log_out" onclick="log_out();">安全退出</a></li>
+            <li class="ui-last-child"> <a data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-minus" href="#demo-links" data-rel="close">关闭</a></li>
+        </ul></div>
+
+    </script>
+
+<script type='text/html' id='logTemplate'>
+    <div class="ui-panel-inner"><div class="row clearfix">
+            <div class="col-md-12 column">
+                <h1 class="text-center">
+                    龙虾直播                    </h1>
+            </div>
+        </div><div class="row clearfix">
+            <div class="col-md-12 column">
+            
+                    <div class="form-group">
+                        <div class="ui-input-text ui-body-inherit ui-shadow-inset"><input data-corners="false" class="form-control" name="username" id="username" placeholder="用户名" type="text"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="ui-input-text ui-body-inherit ui-shadow-inset"><input data-corners="false" class="form-control" name="password" id="password" placeholder="密码" type="password"></div>
+                    </div>
+                    <button type="submit" id="submit" onclick="login();" data-corners="false" class="btn  ui-btn ui-shadow">登录</button>
+            
+                <h5 class="text-center">
+                    <a href="reg.html" data-transition="slide" data-ajax="false" class="ui-link">还没有账号?点此注册</a>
+                    </h5>
+            </div>
+        </div></div>
+ </script>
+
+<script type='text/html' id='loadingTemplate'>
+<div id="loading">
+<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+
+</div>
+</script>
+
+</body>
+</html>
+<script type="text/javascript" src="http://wanjia.mcooz.com/views/mobile_basic/javascript/scoll.js"></script>
+<script>
+function goToPage(page){
+         api.openWin({
+                                        name: 'live',
+                                        url: page,
+                                        pageParam: {
+                                            name: 'test'
+                                        },
+                                      animation:  {
+                                        type:"push",                //动画类型（详见动画类型常量）
+                                        subType:"from_right",       //动画子类型（详见动画子类型常量）
+                                        duration:200                //动画过渡时间，默认300毫秒
+                                    }
+
+                                });
+         }
+
+
+function login () {  
+
+                var submit = $api.dom('#submit');
+                var username;
+                var password ;    
+
+
+
+
+                username= $api.dom('#username');
+                password = $api.dom('#password');
+                username=$api.val(username);
+                password=$api.val(password);
+
+
+if (''==username||''==password) {
+    alert("用户名或者密码不能为空")
+} else{
+
+
+url = 'http://www.mcooz.com/Login/login_act_app';
+api.ajax({
+            url: url,
+            method: 'post',
+            data: {
+                values: {
+                    username: username,
+                    password:password
+                }
+            }
+        }, function(json, err) {
+
+           // alert(json.user_id);
+                    if (json.status!=10) {
+                                if (json.status==1) {
+
+                                    $api.setStorage('userArr', json);
+                                    $api.setStorage('uid', json.user_id);
+                                    $api.setStorage('token', json.token);
+                                    uid= $api.getStorage('uid');
+                                    token= $api.getStorage('token');
+                                    userArr= $api.getStorage('userArr');
+
+                                    id=userArr.user_id;
+                                    username=userArr.username;
+                                   // alert(username);
+
+                                     var userCenterHtml = template.render('userCenterTemplate',json);
+
+
+
+
+                                $('#kros_panel').empty().append(userCenterHtml);
+
+
+                                }
+                                else{
+                                    alert(json.message)
+
+
+                                }
+
+            ;
+
+                          }else{
+
+                                    alert(json.message)
+                          }
+
+
+        });
+
+};
+
+
+
+
+
+}
+
+
+function log_out () {  
+
+     var log_out = $api.dom('#log_out');
+
+$api.setStorage('userArr', '');
+
+url = 'http://www.mcooz.com/Login/logout_app';
+api.ajax({
+            url: url,
+            method: 'post',
+            data: {
+                values: {
+                    username: "a",
+                   
+                }
+            }
+        }, function(json, err) {
+
+           // alert(json.user_id);
+
+            if (json.status==11) {
+
+
+                    var logHtml = template.render('logTemplate',json);
+
+
+
+                    $('#kros_panel').empty().append(logHtml);
+
+
+            };
+
+      
+
+        });
+}
+
+
+
+
+
+var url = 'http://www.mcooz.com/index/krosCategoryList';
+ 
+
+var appId = "A6948423168911";
+window.onerror=function(){return true;} 
+
+ apiready = function(){
+
+     var loadingHtml = template.render('loadingTemplate',1);
+            $('#krosrow1').append(loadingHtml);
+
+
+
+
+        userArr= $api.getStorage('userArr');
+        //alert(userArr);
+       // uid=userArr.user_id;
+/*console.log(uid);
+       alert(uid)*/
+       //判断uid是否定义,也可用判断userArr是否为空作为条件
+        
+
+         if (userArr!='') {
+
+
+
+ var userCenterHtml = template.render('userCenterTemplate',userArr);
+
+
+
+
+            $('#kros_panel').empty().append(userCenterHtml);
+
+
+
+            }else{
+
+                 var logHtml = template.render('logTemplate',userArr);
+
+                 $('#kros_panel').empty().append(logHtml);
+
+
+
+            };
+
+
+api.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                values: {
+                    ling: 1
+                }
+            }
+        }, function(json, err) {
+
+
+      
+
+        var json2=json
+
+$('#loading').remove();
+
+            for(var item in json2)
+        {
+          // alert(item)
+            //
+            //console.log(1);
+
+            //console.log(item);
+
+            var deliveRowHtml1 = template.render('deliveInfoTemplate1',json2[item]);
+            $('#krosrow1').append(deliveRowHtml1);
+
+
+        }
+
+        });
+
+
+/*
+api.setRefreshHeaderInfo({
+    loadingImg: 'widget://image/refresh.png',
+    bgColor: '#ccc',
+    textColor: '#fff',
+    textDown: '下拉刷新...',
+    textUp: '松开刷新...'
+}, function(ret, err) {
+    //在这里从服务器加载数据，加载完成后调用api.refreshHeaderLoadDone()方法恢复组件到默认状态
+api.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                values: {
+                    ling: 1
+                }
+            }
+        }, function(json, err) {
+
+
+      
+
+        var json2=json
+
+
+$('#krosrow1').empty();
+            for(var item in json2)
+        {
+          // alert(item)
+            //
+            //console.log(1);
+
+            //console.log(item);
+
+            var deliveRowHtml1 = template.render('deliveInfoTemplate1',json2[item]);
+            $('#krosrow1').append(deliveRowHtml1);
+
+
+        }
+
+        });
+api.refreshHeaderLoadDone()
+});*/
+
+
+
+
+
+/* var log_out = $api.dom('#log_out');
+
+$api.addEvt(log_out, 'click', function(){
+
+//alert(1)
+$api.setStorage('userArr', '');
+
+url = 'http://www.mcooz.com/Login/logout_app';
+api.ajax({
+            url: url,
+            method: 'post',
+            data: {
+                values: {
+                    username: "a",
+                   
+                }
+            }
+        }, function(json, err) {
+
+           // alert(json.user_id);
+
+            if (json.status==11) {
+
+
+                    var logHtml = template.render('logTemplate',json);
+
+
+
+                    $('#kros_panel').empty().append(logHtml);
+
+
+            };
+
+      
+
+        });
+
+
+
+
+});*/
+
+
+};
+</script>

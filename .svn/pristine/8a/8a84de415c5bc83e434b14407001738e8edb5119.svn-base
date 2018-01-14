@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>龙虾直播</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/themes/blue.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="http://libs.baidu.com/fontawesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="http://wanjia.mcooz.com/views/mobile_basic/javascript/jquery.flexslider-min.js"></script>
+    <script type="text/javascript">
+		var $ = jQuery.noConflict();
+		$(window).load(function() {
+		$('.flexslider').flexslider({
+		animation: "slide",
+		directionNav: false,
+		animationLoop: false,
+		controlNav: false,
+		slideToStart: 0,
+		slideshow: true,
+		animationDuration: 300
+		});
+		});
+		$.mobile.ajaxEnabled=false;
+    </script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script><link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artdialog/artDialog.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artdialog/plugins/iframeTools.js"></script><link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/artdialog/skins/aero.css" />
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
+</head>
+<body>
+<div data-role="page">
+
+            <div data-role="header" class="kros_header" data-position="fixed">
+        <a href="#kros_panel" data-rel="back" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow">Back</a>
+        <a href="/index.php?controller=site&action=search" data-ajax="false" class="ui-btn ui-btn-letf  ui-btn-corner-all ui-btn-icon-notext  ui-icon-search ui-shadow">search</a>
+        <h1>龙虾直播</h1>
+        </div>
+    <style>
+.col-md-10.col-xs-10.column.left.pd5 > div {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.col-md-10.col-xs-10.column.left.pd5 {
+    padding-left: 0;
+}
+
+.slides img {
+    min-height: 190px;
+    width: 100%;
+}
+
+.text-area {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+#kros_header {
+    display: none;
+}
+</style>
+
+<div role="main">
+    <div class=" kros_content">
+        <div class="ui-grid-solo flexslider" style="max-height:190px">
+                        <ul class="slides">
+                                <li> <img src="https://rpic.douyucdn.cn/a1705/04/15/71017_170504154329.jpg" alt="">
+                    <p class="slider-description"></p>
+                </li>
+                                <li> <img src="https://staticlive.douyucdn.cn/upload/signs/201701221442539063.jpg" alt="">
+                    <p class="slider-description"></p>
+                </li>
+                                <li> <img src="https://staticlive.douyucdn.cn/upload/signs/201704282023227300.jpg" alt="">
+                    <p class="slider-description"></p>
+                </li>
+                            </ul>
+                    </div>
+        <div class="ui-grid-a">
+            <div class="ui-grid-solo">
+                <div class="ui-bar ui-bar-a" style="max-height:30px">
+                    <p>龙虾直播</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-content1 kros_content">
+        <!--菜单 开始-->
+        <div class="row row_category " style="margin-top:15px;">
+            <div class="row clearfix" style="padding-left:15px;padding-right:15px">
+                <div class="col-md-3 col-xs-3 column  kros_li">
+                    <div class="text-center">
+                        <a data-ajax="false" href="/index.php?controller=site&action=sitemap">
+                            <span class="fa-stack fa-lg kros_span">
+                        <i class="fa fa-circle fa-stack-2x kros_i" style="color:#ffb700"></i>
+                        <i class="fa fa-trophy fa-stack-1x fa-inverse "></i>
+                    </span>
+                        </a>
+                        <p>排行榜</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-3 column kros_li">
+                    <div class="text-center">
+                        <a data-ajax="false" href="/index.php?controller=simple&action=cart">
+                            <span class="fa-stack fa-lg kros_span">
+                        <i class="fa fa-circle fa-stack-2x kros_i" style="color:#ff67b9"></i>
+                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse "></i>
+                    </span>
+                        </a>
+                        <p>消息</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-3 column kros_li">
+                    <div class="text-center">
+                        <a data-ajax="false" href="/index.php?controller=site&action=groupon">
+                            <span class="fa-stack fa-lg kros_span">
+                        <i class="fa fa-circle fa-stack-2x kros_i" style="color:#56b2ff"></i>
+                        <i class="fa fa-bell-o fa-stack-1x fa-inverse "></i>
+                    </span>
+                        </a>
+                        <p>活动</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-3 column kros_li">
+                    <div class="text-center">
+                        <a data-ajax="false" href="/index.php?controller=ucenter&action=favorite">
+                            <span class="fa-stack fa-lg kros_span">
+                        <i class="fa fa-circle fa-stack-2x kros_i" style="color:#ff6d57"></i>
+                        <i class="fa fa-video-camera fa-stack-1x fa-inverse "></i>
+                    </span>
+                        </a>
+                        <p>全部直播</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--菜单 结束-->
+                <span class="fa fa-paperclip"></span>
+        <div class="yui3-u-20-24 kros_t">最热</div>
+        <div class="container">
+            <div class="row kros_margin">
+                                <div class="col-md-6 col-xs-6 kros_overfollow">
+                    <div class="kros_overfollow">
+                        <a id="kros_a" href="#two" data-transition="flip" ><img class="kros_img  " src="https://rpic.douyucdn.cn/a1705/04/15/71017_170504154329.jpg" alt=""></a>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 col-xs-12 column left ">
+                            <div class="caption">冯提莫：机械革命-革命键盘苏州行</div>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+
+                              <div class="col-md-6 col-xs-6 kros_overfollow">
+                    <div class="kros_overfollow">
+                        <a id="kros_a" href="http://www.mcooz.com/App/live" data-transition="flip" data-ajax="false"><img class="kros_img  " src="https://rpic.douyucdn.cn/a1705/04/15/606118_170504154328.jpg" alt=""></a>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 col-xs-12 column left ">
+                            <div class="caption">大司马：金牌讲师归来，同学们莫慌</div>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+
+                              <div class="col-md-6 col-xs-6 kros_overfollow">
+                    <div class="kros_overfollow">
+                        <a id="kros_a" href="/index.php?controller=site&action=products&id=1" data-transition="flip" data-ajax="false"><img class="kros_img  " src="https://rpic.douyucdn.cn/a1705/04/15/274874_170504154238.jpg" alt=""></a>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 col-xs-12 column left ">
+                            <div class="caption">为杀马特挑服装道具！</div>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+
+                              <div class="col-md-6 col-xs-6 kros_overfollow">
+                    <div class="kros_overfollow">
+                        <a id="kros_a" href="/index.php?controller=site&action=products&id=1" data-transition="flip" data-ajax="false"><img class="kros_img  " src="https://rpic.douyucdn.cn/roomCover/2017/05/04/0055d877f67ead876907bd031891ddec.png" alt=""></a>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 col-xs-12 column left ">
+                            <div class="caption">【小缘】无间道4</div>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+                            </div>
+        </div>
+
+    </div>
+    <div data-role="panel" id="kros_panel" data-position="left" data-display="push" data-theme="a">
+                <div class="row clearfix">
+            <div class="col-md-12 column">
+                <h1 class="text-center">
+                    龙虾直播                    </h1>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <form role="form" action='/index.php?controller=simple&action=login_act' method='post' data-ajax="false">
+                    <div class="form-group">
+                        <input data-corners="false" class="form-control" name="login_info" id="textinput-2" placeholder="用户名" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <input data-corners="false" class="form-control" name="password" id="textinput-3" placeholder="密码" type="password" />
+                    </div>
+                    <button type="submit" data-corners="false" class="btn ">登录</button>
+                </form>
+                <h5 class="text-center">
+                    <a href="/index.php?controller=simple&action=reg&callback=" data-ajax="false">还没有账号?点此注册</a>
+                    </h5>
+            </div>
+        </div>
+            </div>
+</div>
+
+
+
+
+<div data-role="footer"  data-position="fixed" style="background-color: #fcfcfc;border-width:0" data-theme="c">
+    <div data-role="navbar" data-grid="c"  data-position="fixed" style="background-color: #fcfcfc;border-color:#fcfcfc">
+        <ul>
+            <li><a href="/index.php"  data-transition="flow" data-ajax="false" style="background-color: #fcfcfc;border-color:#fcfcfc"  data-icon="home">首页</a></li>
+            <li><a href="/index.php?controller=simple&action=cart" data-transition="flip" data-ajax="false" style="background-color: #fcfcfc;border-color:#fcfcfc" data-icon="heart" data-theme="">关注</a></li>
+            <li><a href="/index.php?controller=ucenter&action=index" data-icon="user" style="background-color: #fcfcfc;border-color:#fcfcfc"  data-transition="flow" rel="external">我的</a></li>
+            <li><a href="#" data-icon="arrow-u" style="background-color: #fcfcfc;border-color:#fcfcfc"  class="returnTopAction">回到顶部</a></li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+
+
+<div data-role="page" id="two" data-theme="a">
+
+    <div data-role="header">
+        <h1>Two</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h2>Two</h2>
+        <p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>
+        <p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
+        <p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to page "one"</a></p>
+
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div><!-- /footer -->
+</div><!-- /page two -->
+
+</body>
+</html>
+<script type="text/javascript" src="http://wanjia.mcooz.com/views/mobile_basic/javascript/scoll.js"></script>

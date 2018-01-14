@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <script src="../script/jquery.min.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+</head>
+<body >
+<style>
+  #box div.active {
+  display: block;
+
+}
+ #box div{
+  display: none;
+}
+
+.content{
+height: 200px;
+
+width:100%;
+
+
+}
+
+.max{
+background-image: url(../image/max.png);
+background-repeat: no-repeat;
+float: right;
+height: 20px;
+width: 20px;
+background-size: 20px 20px;
+position: absolute;
+top: 200px;
+right: 10px;
+}
+
+.share{
+background-image: url(../image/share.png);
+background-repeat: no-repeat;
+float: right;
+height: 20px;
+width: 20px;
+background-size: 20px 20px;
+position: absolute;
+top: 40px;
+right: 10px;
+}		
+
+.report{
+background-image: url(../image/report.png);
+background-repeat: no-repeat;
+float: right;
+height: 20px;
+width: 20px;
+background-size: 20px 20px;
+position: absolute;
+top: 90px;
+right: 10px;
+}	
+
+.stop{
+background-image: url(../image/stop.png);
+background-repeat: no-repeat;
+float: right;
+height: 20px;
+width: 20px;
+background-size: 20px 20px;
+position: absolute;
+top: 140px;
+right: 10px;
+}	
+.online{
+font-size: 10px;
+position: absolute;
+top: 190px;
+left: 10px;
+color: #fff;
+}
+.roomNum{
+font-size: 10px;
+position: absolute;
+top: 206px;
+left: 10px;
+color: #fff;
+}
+</style>
+<div id="content" class="content" >
+<div id="box">
+<div onclick="fullscreen()" class="share"></div>
+<div onclick="fullscreen()" class="report"></div>
+<div onclick="fullscreen()" class="stop"></div>
+<div onclick="fullscreen()" class="max"></div>
+<div  class="online">人气:2.5万</div>
+<div class="roomNum">房间号:432071</div>
+</div>
+
+</div>
+</body>
+</html>
+<script>
+	
+
+function  fullscreen(){
+var jsfun = 'fullscreen_act();';
+api.execScript({
+    frameName: 'player',
+    script: jsfun
+});
+
+}
+
+
+ $("#content").toggle(function(){
+    $('#box div').addClass("active");},
+
+    function(){
+    $('#box div').removeClass("active");}
+  );
+apiready = function(){
+var roomId=api.pageParam.roomId;
+$(".roomNum").html("房间号:432071");
+}
+</script>

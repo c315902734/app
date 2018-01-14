@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册_龙虾直播</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/themes/blue.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="font/css/font-awesome.css" rel="stylesheet">
+
+        <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+
+
+</head>
+<body>
+
+ <div data-role="header" class="kros_header" data-position="fixed">
+          <a href="#" data-rel="back" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow">Back</a>
+        <a href="index.html"  data-transition="slide" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow">Back</a>
+        <h1>注册</h1>
+        </div>
+   <div class="container">
+<div role="main">
+    <div class="kros_content ">
+        <div class="row pbt20">
+            <div class="col-md-12 col-xs-12 ">
+                <h1 class="tc">龙虾直播</h1>
+                <p class="tc">最娱乐的直播平台</p>
+            </div>
+        </div>
+   
+            <input type="hidden" name='callback' />
+            <div class=" m10">
+                <input type="email" name="email" id="textinput-2" placeholder="邮箱" value="" data-corners="false">
+                <input type="text" name="username" id="username" placeholder="用户名" value="" data-corners="false">
+                <input type="password" name="password" id="password" placeholder="设置密码" value="" data-corners="false">
+                <input type="password" name="repassword" id="textinput-3" placeholder="确认密码" value="" data-corners="false">
+         
+            </div>
+            <div class="m10">
+                <input data-corners="false" class="btn ui-btn ui-shadow" type="submit" id="submit" value="立即注册"  onclick="reg_act_app();">
+                <a href="login.html" data-transition="slide"  data-ajax="false"><h4 class="tc">已经有账户?</h4></a>
+            </div>
+        
+    </div>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type='text/javascript'>
+
+function reg_act_app() {                
+                var username;
+                var password ;  
+                username= $api.dom('#username');
+                password = $api.dom('#password');
+                username=$api.val(username);
+                password=$api.val(password);
+
+
+if (''==username||''==password) {
+    alert("用户名或者密码不能为空")
+} else{
+
+
+url = 'http://www.mcooz.com/Login/reg_act_app';
+api.ajax({
+            url: url,
+            method: 'post',
+            data: {
+                values: {
+                    username: username,
+                    password:password
+                }
+            }
+        }, function(json, err) {
+
+           // alert(json.user_id);
+                    if (json.status!=9) {
+                                if (json.status==8) {
+
+                                    $api.setStorage('userArr', json);
+                                    $api.setStorage('uid', json.user_id);
+                                    $api.setStorage('token', json.token);
+                                    uid= $api.getStorage('uid');
+                                    token= $api.getStorage('token');
+                                    userArr= $api.getStorage('userArr');
+
+                                    id=userArr.user_id;
+                                    username=userArr.username;
+                                   //alert(username);
+                                    //alert(json.message)
+
+                                    api.openWin({
+                                        name: 'index',
+                                        url: 'index.html',
+                                        pageParam: {
+                                            name: 'test'
+                                        },
+                                      animation:  {
+                                        type:"push",                //动画类型（详见动画类型常量）
+                                        subType:"from_right",       //动画子类型（详见动画子类型常量）
+                                        duration:200                //动画过渡时间，默认300毫秒
+                                    }
+
+                                });
+                                    
+                                }
+                                else{
+                                    alert(json.message)
+
+
+                                }
+
+            ;
+
+                          }else{
+
+                                    alert(json.message)
+                          }
+
+
+        });
+
+};
+
+
+
+
+
+}
+</script>
+

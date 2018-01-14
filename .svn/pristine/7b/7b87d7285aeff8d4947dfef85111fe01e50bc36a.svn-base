@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的等级</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/mobile.css" />
+    <link rel="stylesheet" href="../themes/orange.min.css" />
+  
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-1.11.3.min.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://wanjia.mcooz.com/views/mobile_basic/javascript/mobile.js"></script>
+    <link rel="stylesheet" href="http://wanjia.mcooz.com/views/mobile_basic/skin/default/css/index.css" />
+      <link href="../font/css/font-awesome.css" rel="stylesheet">
+
+        <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/form/form.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://wanjia.mcooz.com/runtime/_systemjs/autovalidate/style.css" />
+     <script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate.js"></script><script type="text/javascript" charset="UTF-8" src="http://wanjia.mcooz.com/runtime/_systemjs/artTemplate/artTemplate-plugin.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+      <script type="text/javascript" src="../script/main.js"></script>
+
+<style>
+    .blue{color:#ff7700;}
+    .pdt20{padding-top: 20px;}
+</style>
+
+</head>
+
+<body>
+<div data-role="page" id="Home" data-theme="a">
+    <div role="main">
+        <div class="kros_content " id="user">
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type='text/html' id='userCenterTemplate'>
+<div class="ui-corner-all custom-corners">
+
+          <div class="ui-body ui-body-a">
+          <p class="text-center"><%=ext%>级</p>
+          </div>
+          </div>
+
+</script>
+ <script type='text/html' id='noDataTemplate'>
+                <div class="pro_list border-bottom" style="text-align:center;line-height:150px">您尚未登录
+            </div>
+</script> 
+
+
+<script>
+    
+    apiready = function(){
+
+       init()
+
+      api.addEventListener({
+          name: 'accessEvent'
+      }, function(ret, err) {
+ 
+        init()
+      });
+
+
+      api.addEventListener({
+          name: 'logOutEvent'
+      }, function(ret, err) {
+            init()
+      });
+  
+
+
+    }
+
+
+    function init(){
+
+        userArr= $api.getStorage('userArr');
+        //alert(userArr);
+       // uid=userArr.user_id;
+/*console.log(uid);
+       alert(uid)*/
+       //判断uid是否定义,也可用判断userArr是否为空作为条件
+        
+
+         if (userArr) {
+            url = 'http://www.mcooz.com/Member/grade';
+            api.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                values: {
+                    json: 1,
+                   
+                }
+            }
+        }, function(json, err) {
+
+
+
+         var userCenterHtml = template.render('userCenterTemplate',json);
+
+
+
+
+            $('#user').empty().append(userCenterHtml);
+
+                  });
+
+            }
+            else
+
+            {
+
+                 var noDataHtml = template.render('noDataTemplate',1);
+
+                 $('#user').empty().append(noDataHtml);
+
+
+
+            };
+
+
+    }
+</script>
